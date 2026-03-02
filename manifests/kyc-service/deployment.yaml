@@ -6,7 +6,7 @@ metadata:
     app: kyc-service
     compliance: pii-handler
 spec:
-  replicas: #{Replicas}
+  replicas: #{Project.Replicas}
   selector:
     matchLabels:
       app: kyc-service
@@ -23,9 +23,9 @@ spec:
             - containerPort: 80
           env:
             - name: LOG_LEVEL
-              value: "#{LogLevel}"
+              value: "#{Project.LogLevel}"
             - name: DOCUMENT_STORAGE
-              value: "#{DocumentStorageUrl}"
+              value: "#{Project.DocumentStorageUrl}"
             - name: KAFKA_BROKERS
               value: "#{KafkaBrokers}"
           resources:
