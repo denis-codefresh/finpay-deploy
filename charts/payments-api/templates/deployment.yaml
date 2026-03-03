@@ -19,6 +19,8 @@ spec:
         app: {{ .Release.Name }}
         app.kubernetes.io/name: {{ .Chart.Name }}
     spec:
+      imagePullSecrets:
+        - name: regcred
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
