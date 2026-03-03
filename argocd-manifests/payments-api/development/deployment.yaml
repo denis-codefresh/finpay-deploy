@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: payments-api
-          image: denisoctopus/finpay-payments-api:latest
+          image: denisoctopus/finpay-payments-api:1.2.0
           ports:
             - containerPort: 80
           env:
